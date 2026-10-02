@@ -1,0 +1,329 @@
+css * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 24px;
+  color: #111111;
+  background: #ffffff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+.btn {
+  padding: 12px 24px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid #0b1f3a;
+  background: #0b1f3a;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: #163a68;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================
+   FORMULÁRIOS
+   ========================= */
+
+label {
+  display: inline-block;
+  margin: 10px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+input[type="number"] {
+  width: 90px;
+  padding: 9px;
+  margin-left: 5px;
+  border: 2px solid #222222;
+  border-radius: 6px;
+  font-size: 17px;
+}
+
+input[type="file"] {
+  max-width: 100%;
+}
+
+.status {
+  min-height: 20px;
+  margin: 6px auto 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* =========================
+   CARTELAS
+   ========================= */
+
+.cartela {
+  display: inline-block;
+  margin: 10px;
+  border: 3px solid #222222;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.cartela table {
+  margin: 0;
+  border-collapse: collapse;
+}
+
+.cartela td {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #222222;
+  text-align: center;
+  font-weight: 800;
+  font-size: 17px;
+  position: relative;
+  overflow: hidden;
+}
+
+.free img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 2px;
+  background: #ffffff;
+}
+
+/* =========================
+   PAINEL DO JOGO
+   ========================= */
+
+#tela-jogo {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* Pedra atual sorteada */
+#pedraAtual {
+  display: inline-block;
+  min-width: 260px;
+  margin: 8px 0 22px;
+  padding: 8px 30px;
+
+  font-size: clamp(52px, 7vw, 90px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  background: #0b1f3a;
+  color: #ffffff;
+  border: 4px solid #0b1f3a;
+  border-radius: 14px;
+}
+
+/* =========================
+   TABELA DE PEDRAS
+   ========================= */
+
+#tabela-jogo-container {
+  width: 100%;
+  margin: 10px auto 24px;
+  overflow-x: auto;
+  padding: 0 4px 12px;
+}
+
+#tabela-jogo-container table {
+  width: min(100%, 1200px);
+  border-collapse: collapse;
+  margin: auto;
+  table-layout: fixed;
+  background: #ffffff;
+}
+
+/* Letras B I N G O */
+#tabela-jogo-container th {
+  height: 62px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1;
+  border: 4px solid #222222;
+  padding: 4px 6px;
+
+  background: #0b1f3a;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+/* Números */
+#tabela-jogo-container td {
+  width: 10%;
+  height: clamp(58px, 7vw, 82px);
+
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1;
+
+  border: 2px solid #222222;
+  text-align: center;
+
+  font-weight: 900;
+  color: #111111;
+  background: #ffffff;
+
+  position: relative;
+}
+
+/* Separação visual entre B-I-N-G-O */
+#tabela-jogo-container .espaco-coluna {
+  border-left: 4px solid #222222;
+  border-right: 4px solid #222222;
+}
+
+/* =========================
+   PEDRAS JÁ SORTEADAS
+   ========================= */
+
+#tabela-jogo-container td.sorteado {
+  background: #ffd600;
+  color: #111111;
+  font-weight: 900;
+}
+
+/* =========================
+   PADRÕES DE VITÓRIA
+   ========================= */
+
+.ganhadores {
+  margin-top: 18px;
+}
+
+.imagem {
+  width: 300px;
+  max-width: calc(100vw - 40px);
+  margin: 10px;
+  cursor: pointer;
+
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
+/* =========================
+   PREVIEW
+   ========================= */
+
+#preview {
+  margin-top: 10px;
+}
+
+/* =========================
+   TELAS PEQUENAS
+   ========================= */
+
+@media (max-width: 900px) {
+  body {
+    padding: 14px;
+  }
+
+  #tabela-jogo-container td {
+    height: 58px;
+    font-size: 30px;
+  }
+
+  #tabela-jogo-container th {
+    height: 52px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .btn {
+    width: min(90%, 320px);
+  }
+
+  #pedraAtual {
+    min-width: 200px;
+    font-size: 48px;
+  }
+
+  #tabela-jogo-container {
+    overflow-x: auto;
+  }
+
+  #tabela-jogo-container table {
+    min-width: 600px;
+  }
+
+  #tabela-jogo-container td {
+    height: 48px;
+    font-size: 28px;
+  }
+
+  #tabela-jogo-container th {
+    height: 48px;
+    font-size: 26px;
+  }
+}
+
+/* =========================
+   MODO DATA SHOW
+   ========================= */
+
+/*
+  Se quiser ativar o modo projeção,
+  adicione "modo-projecao" ao <body>:
+
+  <body class="modo-projecao">
+*/
+
+body.modo-projecao {
+  background: #ffffff;
+  color: #111111;
+  padding: 18px;
+}
+
+body.modo-projecao #tela-jogo {
+  max-width: 1600px;
+}
+
+body.modo-projecao #tabela-jogo-container table {
+  width: min(100%, 1450px);
+}
+
+body.modo-projecao #tabela-jogo-container td {
+  height: 86px;
+  font-size: 50px;
+}
+
+body.modo-projecao #tabela-jogo-container th {
+  height: 70px;
+  font-size: 52px;
+}
+
+body.modo-projecao #pedraAtual {
+  font-size: 92px;
+  min-width: 300px;
+}

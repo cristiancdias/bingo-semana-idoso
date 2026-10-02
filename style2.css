@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background: #3498db;
+  color: white;
+  font-size: 16px;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: #2980b9;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+label {
+  display: inline-block;
+  margin: 8px;
+}
+
+input[type="number"] {
+  width: 90px;
+  padding: 8px;
+  margin-left: 5px;
+}
+
+input[type="file"] {
+  max-width: 100%;
+}
+
+.status {
+  min-height: 20px;
+  margin: 5px auto 10px;
+  font-size: 14px;
+}
+
+.cartela {
+  display: inline-block;
+  margin: 10px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.cartela table {
+  margin: 0;
+}
+
+.cartela td {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #333;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.free img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 2px;
+  background: white;
+}
+
+#pedraAtual {
+  font-size: 60px;
+  min-height: 72px;
+  margin: 10px 0 20px;
+}
+
+#tabela-jogo-container {
+  margin-top: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+#tabela-jogo-container table {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+#tabela-jogo-container th {
+  font-size: 32px;
+  border: 3px solid;
+  padding: 4px 8px;
+}
+
+#tabela-jogo-container td {
+  width: 60px;
+  height: 60px;
+  font-size: 40px;
+  border: 1px solid #333;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+
+#tabela-jogo-container .espaco-coluna {
+  border: 3px solid;
+}
+
+.sorteado {
+  background-color: #c42f15;
+  color: white;
+}
+
+.ganhadores {
+  margin-top: 15px;
+}
+
+.imagem {
+  width: 300px;
+  max-width: calc(100vw - 40px);
+  margin: 10px;
+  cursor: pointer;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preview {
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+  }
+
+  .btn {
+    width: min(90%, 320px);
+  }
+
+  #pedraAtual {
+    font-size: 44px;
+  }
+
+  #tabela-jogo-container td {
+    width: 48px;
+    height: 48px;
+    font-size: 28px;
+  }
+
+  #tabela-jogo-container th {
+    font-size: 24px;
+  }
+}
